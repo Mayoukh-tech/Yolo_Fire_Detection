@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Detection App</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        /* CSS */
+        body {
+            background-image: url('static/img_fire.jpg'); /* Add your image path here */
+            background-size: cover; /* Cover the entire body with the background image */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            /* Optionally, you can add other styles such as font-family, color, etc. */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Fire Detection App</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Results</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <section id="capture">
+                <h2>Capture Image from Webcam</h2>
+                <div id="cameraContainer" class="flex-container">
+                    <div id="videoContainer" class="flex-item">
+                        <video id="video" autoplay></video> <!-- Video element for webcam feed -->
+                    </div>
+                    <div id="capturedImageContainer" class="flex-item">
+                        <canvas id="canvas"></canvas> <!-- Canvas element for displaying captured image -->
+                    </div>
+                </div>
+                <div id="controls">
+                    <button id="captureButton" class="btn">Capture Image</button> <!-- Button to capture image -->
+                </div>
+            </section>
+
+            <section id="fire_detection">
+                <h2>Fire Detection</h2>
+                <div id="result">
+                    <p>{{ result }}</p>
+                    {% if result %}
+                    <img src="{{ url_for('static', filename='captured_image.jpg') }}" alt="Captured Image">
+                    {% endif %}
+                </div>
+                <form id="fireDetectionForm" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" id="capturedImageData" name="capturedImageData"> <!-- Hidden input for captured image data -->
+                    <button id="detectFireButton" type="submit" class="btn">Detect Fire</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fire Detection App</p>
+        </div>
+    </footer>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

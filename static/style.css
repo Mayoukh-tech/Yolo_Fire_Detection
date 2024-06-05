@@ -1,0 +1,156 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fefef9;
+    background-image: url('static/img_fire.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    color: #1b0e0e;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+}
+
+header nav {
+    text-align: center;
+    padding: 15px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    font-style: bold;
+    color: #fff;
+    margin-left: 20px;
+    padding: 5px 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+header nav ul li:first-child {
+    margin-left: 0;
+}
+
+header nav ul li a:hover {
+    background-color: #e9cfcf;
+}
+
+p {
+    color: #e7e3e3;
+    font-size: large;
+    font-style: bold;
+    padding: 5px 15px;
+}
+
+header nav ul li a {
+    color: #151414;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.flex-item {
+    flex: 1;
+    margin-right: 10px;
+}
+
+#video,
+#canvas {
+    width: 100%;
+    height: auto;
+}
+
+#controls {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #fc1f1f;
+}
+
+footer {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    header nav ul li {
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
